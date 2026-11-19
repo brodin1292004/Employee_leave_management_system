@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
 class User(AbstractUser):
 
     class Role(models.TextChoices):
@@ -16,4 +15,8 @@ class User(AbstractUser):
 
     def __str__(self):
         return f"{self.username} - {self.role}"
+
+class Department(models.Model):
+    department_id = models.IntegerField(primary_key=True)
+    department_name =  models.CharField(max_length=100)
     
